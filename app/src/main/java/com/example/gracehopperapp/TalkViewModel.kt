@@ -20,7 +20,7 @@ data class Filters(
     val experienceLevel: String = "All"
 )
 
-class TalkViewModel(application: Application) : AndroidViewModel(application) {
+open class TalkViewModel(application: Application) : AndroidViewModel(application) {
     private val json = Json { ignoreUnknownKeys = true }
 
     private val _filters = MutableStateFlow(Filters())
@@ -29,7 +29,7 @@ class TalkViewModel(application: Application) : AndroidViewModel(application) {
     private val _talks = MutableStateFlow<List<Talk>>(emptyList())
 
     private val _selectedTalk = MutableStateFlow<Talk?>(null)
-    val selectedTalk: StateFlow<Talk?> = _selectedTalk
+    open val selectedTalk: StateFlow<Talk?> = _selectedTalk
 
     fun onTalkSelected(talk: Talk) {
         _selectedTalk.value = talk
@@ -89,7 +89,7 @@ class TalkViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
-    private fun loadTalksFromJson() {
+    open fun loadTalksFromJson() {
         val context = getApplication<Application>().applicationContext
         val talkList = runCatching {
             context.assets.open("TalkData.json").bufferedReader().use { reader ->

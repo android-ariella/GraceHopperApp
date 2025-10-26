@@ -1,5 +1,6 @@
 package com.example.gracehopperapp.ui.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,9 +19,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.gracehopperapp.TalkViewModel
+import com.example.gracehopperapp.ui.theme.GraceHopperAppTheme
+import com.example.gracehopperapp.utils.PreviewTalkViewModel
+import com.example.gracehopperapp.utils.mockTalk
+import com.example.gracehopperapp.utils.mockTalks
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -74,5 +81,18 @@ fun ScheduleScreen(talkViewModel: TalkViewModel, navController: NavController, b
                 }
             }
         }
+    }
+}
+
+@SuppressLint("ViewModelConstructorInComposable")
+@Preview(showBackground = true)
+@Composable
+fun ScheduleScreenPreview() {
+
+    val navController = rememberNavController()
+
+
+    GraceHopperAppTheme {
+        ScheduleScreen(PreviewTalkViewModel(mockTalk, mockTalks), navController, bottomBar = {})
     }
 }
