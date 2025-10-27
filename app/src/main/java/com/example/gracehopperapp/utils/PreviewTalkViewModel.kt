@@ -26,10 +26,10 @@ class PreviewTalkViewModel(initialTalk: Talk? = null, previewTalks: List<Talk> =
 }
 
 val mockTalk = Talk(
-    sessionName = "Getting Started with GraphQL: Build Smarter APIs",
-    speakerNames = "Gosia Waszak, Stuart Perks",
+    sessionName = "Build Your First Mobile App in Under an Hour Using GenAI",
+    speakerNames = "Ariella Silver Mendel, Madona Wambua",
     time = "Thursday, November 06, 04:00 PM - 05:00 PM",
-    description = "GraphQL is revolutionizing the way developers build and consume APIs. In this fast-paced, beginner-friendly workshop, attendees will build and query their very first GraphQL API using JavaScript and Apollo Server.",
+    description = "While women are underrepresented across all fields of software engineering, the gender disparity is even greater in mobile, with under 20% of mobile engineers being women. Mobile is a valuable niche within software development, with over $520bn of mobile app revenue in 2024 and a growing demand for mobile developers, projected at 22% in this decade. Additionally, there has been a stark rise in AIi within programming, with 92% of U.S.-based developers using AI coding tools. The goal of this workshop is to help women to gain exposure to modern mobile development and inspire them to potentially pursue it as a career path. In this workshop, participants will learn how to properly utilize GenAI to assist in building a fully functioning mobile application.",
     type = "Workshop",
     category = "Technology",
     experienceLevel = "Beginner",
